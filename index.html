@@ -26,6 +26,15 @@ html {
   scroll-behavior: smooth;
 }
 
+.overlay-content-body img {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 /* ── Bento grid interactive styles ── */
 #bento-grid {
   position: relative;
@@ -1116,7 +1125,7 @@ html {
           </div>
         </div>
         <div class="overlay-content-body relative z-10 mt-6">
-          ${d.img ? '<img src="' + d.img + '" alt="' + d.title + '" class="w-full object-cover rounded-2xl mb-2 h-84 xl:mb-4 xl:w-[1000px] xl:[aspect-ratio:16/9]">' : ''}
+          ${d.img ? '<img src="' + d.img + '" alt="' + d.title + '" loading="lazy" class="w-full object-cover rounded-2xl mb-2 h-84 xl:mb-4 xl:w-[1000px] xl:[aspect-ratio:16/9]">' : ''}
           <p class="text-stone-600 font-mitr font-light leading-relaxed text-base mb-4 max-w-5xl">${d.desc}</p>
           <div class="flex flex-wrap gap-2 mb-0">${pillsHTML}</div>
           <div class="flex flex-col sm:flex-row gap-3">
